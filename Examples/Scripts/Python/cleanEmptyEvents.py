@@ -3,14 +3,12 @@ import csv
 from sys import argv
 import os
 
+typegen = argv[1]
+nevents = int(argv[2])
 
+folder =  '/depot/cms/kluitel/HEPT/data/tracking/raw/raw_' + typegen
 
-
-
-folder = '/tmp/odd_output_tau3mu_run_%s/'%argv[1]
-
-
-for i in range(0,2000):
+for i in range(0,nevents):
 
 
     if not os.path.exists(folder + f'event00000{i:04d}-particles_simulated.csv'): continue
