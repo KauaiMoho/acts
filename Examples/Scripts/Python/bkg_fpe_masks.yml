@@ -1,3 +1,13 @@
 "libActsCore.so:0-100000":
-  FLTDIV: 10
-  FLTINV: 10
+  FLTDIV: 1000
+  FLTINV: 1000
+
+"libActsExamplesTrackFinding.so:0-100000":
+  FLTDIV: 1000
+  FLTINV: 1000
+
+"libActsExamplesIoCsv.so:0-100000":
+  FLTINV: 1000
+
+"libActsExamplesIoRoot.so:0-100000":
+  FLTINV: 1000
