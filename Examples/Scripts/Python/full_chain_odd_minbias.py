@@ -41,7 +41,7 @@ from acts.examples.odd import getOpenDataDetector, getOpenDataDetectorDirectory
 from acts.examples import CsvTrackingGeometryWriter
 
 u = acts.UnitConstants
-
+masks = acts.examples.Sequencer.FpeMask.fromFile("bkg_fpe_masks.yml")
 
 parser = argparse.ArgumentParser(description="Full chain with the OpenDataDetector")
 parser.add_argument(
@@ -181,7 +181,7 @@ s = acts.examples.Sequencer(
     skip=args.skip,
     numThreads=1 if args.geant4 else -1,
     outputDir=str(outputDir),
-    fpeMasks=["FLTDIV", "FLTINV"]
+    fpeMasks=masks
 )
 
 s.addWriter(

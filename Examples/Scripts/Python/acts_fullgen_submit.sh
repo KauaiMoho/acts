@@ -25,7 +25,7 @@ echo "Working in "`pwd`
 
 echo "Will run Tau3Mu Generation with ACTS for job = " ${NJOB}
 
-if [TYPEGEN == "signal"]; then
+if [ "$TYPEGEN" == "signal" ]; then
 
 python full_chain_odd_tau3mu.py --ttbar --events ${NEVENTS} --rs ${NJOB} --ttbar-pu 10 --output /depot/cms/kluitel/HEPT/data/tracking/raw/raw_signal
 

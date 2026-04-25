@@ -1,0 +1,8 @@
+file: "libActsCore.so"
+  lines: [0, 100000]
+  type: "FLTDIV"
+  count: 10
+file: "libActsCore.so"
+  lines: [0, 100000]
+  type: "FLTINV"
+  count: 10
