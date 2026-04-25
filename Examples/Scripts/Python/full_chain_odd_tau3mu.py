@@ -37,7 +37,8 @@ from acts.examples.reconstruction import (
     addSeedFilterML,
     SeedFilterMLDBScanConfig,
 )
-from acts.examples.odd import getOpenDataDetector, getOpenDataDetectorDirectory
+from acts.examples.odd import getOpenDataDetector, getOpenDataDetectorDirector
+from acts.examples import CsvTrackingGeometryWritery
 
 u = acts.UnitConstants
 
@@ -166,7 +167,7 @@ oddMaterialMap = (
 oddDigiConfig = (
     args.digi_config
     if args.digi_config
-    else actsDir / "Examples/Configs/odd-digi-smearing-config.json"
+    else actsDir / "Examples/Configs/odd-geometric-geometric-config.json"
 )
 
 oddSeedingSel = actsDir / "Examples/Configs/odd-seeding-config.json"
@@ -184,6 +185,15 @@ s = acts.examples.Sequencer(
     numThreads=1 if args.geant4 else -1,
     outputDir=str(outputDir),
 )
+
+s.addWriter(
+        CsvTrackingGeometryWriter(
+            level=acts.logging.INFO,
+            trackingGeometry=trackingGeometry,
+            outputDir=str(outputDir),
+            writePerEvent=False,
+        )
+    )
 
 if args.edm4hep:
     import acts.examples.edm4hep
