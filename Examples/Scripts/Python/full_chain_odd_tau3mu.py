@@ -38,7 +38,7 @@ from acts.examples.reconstruction import (
     SeedFilterMLDBScanConfig,
 )
 from acts.examples.odd import getOpenDataDetector, getOpenDataDetectorDirectory
-from acts.examples import CsvTrackingGeometryWritery
+from acts.examples import CsvTrackingGeometryWriter
 
 u = acts.UnitConstants
 

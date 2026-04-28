@@ -3,7 +3,7 @@
 #SBATCH --mail-type=FAIL # Mail events (NONE, BEGIN, END, FAIL, ALL)
 #SBATCH --mail-user=kluitel@purdue.edu # Where to send mail	
 #SBATCH --account=cms
-#SBATCH --output=/depot/cms/kluitel/acts_output/test-%A-%3.out	# Name output file 
+#SBATCH --output=/depot/cms/kluitel/acts_output/test-%A.out	# Name output file 
 
 NJOB=$1
 NEVENTS=$2
