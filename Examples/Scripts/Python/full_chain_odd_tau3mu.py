@@ -397,9 +397,9 @@ if args.reco:
             seedDeduplication=True,
             stayOnSeed=True,
             pixelVolumes=[16, 17, 18],
-            stripVolumes=[23, 24, 25],
+            stripVolumes=[],
             maxPixelHoles=1,
-            maxStripHoles=2,
+            maxStripHoles=0,
             constrainToVolumes=[
                 2,  # beam pipe
                 32,
@@ -407,15 +407,6 @@ if args.reco:
                 16,
                 17,
                 18,  # pixel
-                20,  # PST
-                23,
-                24,
-                25,  # short strip
-                26,
-                8,  # long strip gap
-                28,
-                29,
-                30,  # long strip
             ],
         ),
         outputDirRoot=outputDir if args.output_root else None,

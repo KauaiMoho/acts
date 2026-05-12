@@ -11,3 +11,6 @@
 
 "libActsExamplesIoRoot.so:0-100000":
   FLTINV: 1000
+
+"libActsExamplesFatras.so:0-100000":
+  FLTUND: 1000

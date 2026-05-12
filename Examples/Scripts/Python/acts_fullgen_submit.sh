@@ -27,11 +27,11 @@ echo "Will run Tau3Mu Generation with ACTS for job = " ${NJOB}
 
 if [ "$TYPEGEN" == "signal" ]; then
 
-python full_chain_odd_tau3mu.py --ttbar --events ${NEVENTS} --rs ${NJOB} --ttbar-pu 10 --output /depot/cms/kluitel/HEPT/data/tracking/raw/raw_signal
+python full_chain_odd_tau3mu.py --ttbar --events ${NEVENTS} --rs ${NJOB} --ttbar-pu 10 --no-reco --output /depot/cms/kluitel/HEPT/data/tracking/raw/raw_signal
 
 else
 
-python full_chain_odd_minbias.py --ttbar --events ${NEVENTS} --ttbar-pu 10 --output /depot/cms/kluitel/HEPT/data/tracking/raw/raw_bkg
+python full_chain_odd_minbias.py --ttbar --events ${NEVENTS} --ttbar-pu 10 --no-reco --output /depot/cms/kluitel/HEPT/data/tracking/raw/raw_bkg
 
 fi
 
