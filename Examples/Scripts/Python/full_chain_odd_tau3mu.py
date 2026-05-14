@@ -401,9 +401,6 @@ if args.reco:
             maxPixelHoles=1,
             maxStripHoles=0,
             constrainToVolumes=[
-                2,  # beam pipe
-                32,
-                4,  # beam pip gap
                 16,
                 17,
                 18,  # pixel
