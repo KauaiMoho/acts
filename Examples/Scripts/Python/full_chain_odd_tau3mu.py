@@ -39,9 +39,9 @@ from acts.examples.reconstruction import (
 )
 from acts.examples.odd import getOpenDataDetector, getOpenDataDetectorDirectory
 from acts.examples import CsvTrackingGeometryWriter
+import random
 
 u = acts.UnitConstants
-
 
 parser = argparse.ArgumentParser(description="Full chain with the OpenDataDetector")
 parser.add_argument(
@@ -53,7 +53,8 @@ parser.add_argument(
 )
 parser.add_argument("--events", "-n", help="Number of events", type=int, default=100)
 parser.add_argument("--skip", "-s", help="Number of events", type=int, default=0)
-parser.add_argument("--rs", "-r", help="Random seed", type=int, default=42)
+parser.add_argument("--rs", "-r", help="Random seed", type=int, default=None)
+
 parser.add_argument("--edm4hep", help="Use edm4hep inputs", type=pathlib.Path)
 parser.add_argument(
     "--geant4", help="Use Geant4 instead of fatras", action="store_true"
@@ -177,7 +178,12 @@ detector = getOpenDataDetector(odd_dir=geoDir, materialDecorator=oddMaterialDeco
 trackingGeometry = detector.trackingGeometry()
 decorators = detector.contextDecorators()
 field = acts.ConstantBField(acts.Vector3(0.0, 0.0, 2.0 * u.T))
-rnd = acts.examples.RandomNumbers(seed=args.rs)
+
+sys_seed = args.rs if args.rs is not None else random.SystemRandom().randint(1, 2**31 - 1)
+
+print(f"Using random seed: {sys_seed}")
+
+rnd = acts.examples.RandomNumbers(seed=sys_seed)
 
 s = acts.examples.Sequencer(
     events=args.events,
